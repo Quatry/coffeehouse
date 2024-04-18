@@ -19,3 +19,10 @@ G
 coffeehouse/settings.py,b\0\b03ec721ebc06e6c749b0a82ba1a1942ff828166
 H
 api/coffeehouse/views.py,8\1\81c7ba0a65d3b04587502a4cc4e993134218e333
+G
+api/menu/serializers.py,3\7\3730b37fe85fdde15217da934191c827e400bff8
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+@
+requirements.txt,1\9\19359a61ae2446b51b549167b014da2fcf265768

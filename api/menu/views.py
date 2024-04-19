@@ -13,7 +13,7 @@ class MenuCreateAPIView(generics.CreateAPIView):
     permission_classes = [IsAdminUser, ]
 
 
-class MenuRetrieveAPIView(generics.ListAPIView):
+class MenuListAPIView(generics.ListAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
     lookup_field = 'slug'

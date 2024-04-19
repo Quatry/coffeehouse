@@ -3,6 +3,15 @@
 
 # Документация API для кофейни
 
+## Установка и запуск
+Для установки и запуска проекта выполните следующие шаги:
+
+1. ```git clone https://github.com/Quatry/coffeehouse.git```
+2. ```pip install -r requirements.txt```
+3. ```python manage.py migrate```
+4. ```python manage.py runserver```
+5. Перейти по ```http://localhost:8000/api```
+
 ## CoffeeHouse (Кофейня)
 
 ### Модель CoffeeHouse
@@ -19,25 +28,20 @@
 
 ### URL-шаблоны (`api.coffeehouse.urls`)
 
-#### `GET`
-#### ```localhost:8000/api/```
+#### `GET` Возвращает список всех кофеен.
+```localhost:8000/api/```
 
-Возвращает список всех кофеен.
+#### `POST` Создает новую кофейню.
+```localhost:8000/api/add_coffee_house```
 
-#### `POST`
-#### ```localhost:8000/api/add_coffee_house```
 
-Создает новую кофейню.
+#### `GET` Возвращает информацию о конкретной кофейне по его уникальному идентификатору.
+```localhost:8000/api/<slug:slug>/```
 
-#### `GET`
-#### ```localhost:8000/api/<slug:slug>/```
 
-Возвращает информацию о конкретной кофейне по его уникальному идентификатору.
+#### `PUT`, `DELETE` Изменяет или удаляет информацию о конкретной кофейне по его уникальному идентификатору.
+```localhost:8000/api/<slug:slug>/edit```
 
-#### `PUT`, `DELETE`
-#### ```localhost:8000/api/<slug:slug>/edit```
-
-Изменяет или удаляет информацию о конкретной кофейне по его уникальному идентификатору.
 
 ## Menu (Меню)
 
@@ -53,20 +57,17 @@
 
 ### URL-шаблоны (`api.menu.urls`)
 
-#### `POST`
-#### ```localhost:8000/api/<slug:c_h_slug>/menu/add/```
+#### `POST` Добавляет новое меню для конкретной кофейни.
+```localhost:8000/api/<slug:c_h_slug>/menu/add/```
 
-Добавляет новое меню для конкретной кофейни.
 
-#### `GET`
-#### ```localhost:8000/api/<slug:c_h_slug>/menu/<slug:slug>/```
+#### `GET` Возвращает информацию о конкретном меню по его уникальному идентификатору.
+```localhost:8000/api/<slug:c_h_slug>/menu/<slug:slug>/```
 
-Возвращает информацию о конкретном меню по его уникальному идентификатору.
 
-#### `PUT`, `DELETE`
-#### ```localhost:8000/api/<slug:c_h_slug>/menu/<slug:slug>/edit/```
+#### `PUT`, `DELETE` Изменяет или удаляет информацию о конкретном меню по его уникальному идентификатору.
+```localhost:8000/api/<slug:c_h_slug>/menu/<slug:slug>/edit/```
 
-Изменяет или удаляет информацию о конкретном меню по его уникальному идентификатору.
 
 ## MenuItem (Элемент меню)
 
@@ -84,17 +85,14 @@
 
 ### URL-шаблоны (`api.menuitems.urls`)
 
-#### `POST`
-#### ```localhost:8000/api/<slug:c_h_slug>/menu/<slug:menu_slug>/items/add/```
+#### `POST` Добавляет новый пункт меню в конкретное меню.
+```localhost:8000/api/<slug:c_h_slug>/menu/<slug:menu_slug>/items/add/```
 
-Добавляет новый пункт меню в конкретное меню.
 
-#### `GET`
-#### ```localhost:8000/api/<slug:c_h_slug>/menu/<slug:menu_slug>/items/<slug:id>/```
+#### `GET`Возвращает информацию о конкретном пункте меню по его уникальному идентификатору.
+```localhost:8000/api/<slug:c_h_slug>/menu/<slug:menu_slug>/items/<slug:id>/```
 
-Возвращает информацию о конкретном пункте меню по его уникальному идентификатору.
 
-#### `PUT`, `DELETE`
-#### ```localhost:8000/api/<slug:c_h_slug>/menu/<slug:menu_slug>/items/<slug:id>/edit/```
+#### `PUT`, `DELETE` Изменяет или удаляет информацию о конкретном пункте меню по его уникальному идентификатору.
+```localhost:8000/api/<slug:c_h_slug>/menu/<slug:menu_slug>/items/<slug:id>/edit/```
 
-Изменяет или удаляет информацию о конкретном пункте меню по его уникальному идентификатору.

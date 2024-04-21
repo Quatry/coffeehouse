@@ -8,10 +8,16 @@ class CoffeeHouse(models.Model):
     info = models.TextField()
     slug = models.SlugField(unique=True)
 
+    def __str__(self):
+        return self.name
+
 class Menu(models.Model):
     name = models.CharField(max_length=50)
     coffeehouse = models.ForeignKey(CoffeeHouse, on_delete=models.CASCADE)
     slug = models.SlugField(unique=True)
+
+    def __str__(self):
+        return self.name
 
 class MenuItem(models.Model):
     CHOICES = [
@@ -25,3 +31,6 @@ class MenuItem(models.Model):
     units = models.IntegerField()
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
     photo = models.ImageField(upload_to='menu_item_photo/', null=True)
+
+    def __str__(self):
+        return self.name
